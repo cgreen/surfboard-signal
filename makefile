@@ -2,7 +2,7 @@ CC=gcc
 CXX=g++
 RM=rm -f
 CPPFLAGS=-I../http-client/
-LDFLAGS=-lboost_system
+LDLIBS=-lboost_system
 
 SRCS=status.cpp ../http-client/HttpClient.cpp
 OBJS=$(subst .cpp,.o,$(SRCS))
@@ -10,7 +10,7 @@ OBJS=$(subst .cpp,.o,$(SRCS))
 all:status
 
 status: $(OBJS)
-	$(CXX) $(CPPFLAGS) $(OBJS) -o $@ $(LDFLAGS)
+	$(CXX) $(CPPFLAGS) $^ -o $@ $(LDLIBS)
 
 depend: .depend
 
