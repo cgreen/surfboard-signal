@@ -1,8 +1,8 @@
 CC=gcc
 CXX=g++
 RM=rm -f
-CPPFLAGS=-I../http-client/ -I/usr/include/tidy/ -g
-LDLIBS=-lboost_system -ltidy
+CPPFLAGS=-I../http-client/ -g
+LDLIBS=-lboost_system -ltidy -lxerces-c
 
 SRCS=status.cpp ../http-client/HttpClient.cpp
 OBJS=$(subst .cpp,.o,$(SRCS))
